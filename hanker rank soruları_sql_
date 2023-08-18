@@ -1,1 +1,6 @@
 select sum(population) from city group by district having district = "California"
+
+select salary*months as toplam_maas, count(*) from employee group by toplam_maas 
+order by 1 desc limit 
+
+select round(sum(lat_n),4) from station where lat_n between 38.7880 and 137.2345 
