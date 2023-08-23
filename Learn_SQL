@@ -1,2 +1,8 @@
 Select first_name from patients group by first_name having count(first_name)=1
 SELECT first_name,patient_id from patients where first_name like 'S%s' and len(first_name)>=6
+
+select p.patient_id, a.diagnosis
+from patients p 
+join admissions a on (p.patient_id = a.patient_id)
+group by a.diagnosis,p.patient_id 
+having count(*)>1
