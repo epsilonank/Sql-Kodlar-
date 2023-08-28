@@ -17,3 +17,7 @@ SELECT
   CONCAT(UPPER(last_name), ',', LOWER(first_name)) AS new_name_format
 FROM patients
 ORDER BY first_name DESC;
+
+SELECT pr.province_id,sum(pa.height)
+FROM patients pa join province_names pr on pa.province_id=pr.province_id 
+group by pr.province_id having sum(pa.height)>7000
